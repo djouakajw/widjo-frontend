@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  background: #0A0A0F;
+  color: #E2E8F0;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #7C3AED, #06B6D4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Neon glow */
+.neon-glow { box-shadow: 0 0 20px rgba(124, 58, 237, 0.4), 0 0 40px rgba(124, 58, 237, 0.2); }
+.neon-glow-cyan { box-shadow: 0 0 20px rgba(6, 182, 212, 0.4); }
+
+/* Glass card */
+.glass {
+  background: rgba(22, 22, 31, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Animated gradient background */
+.gradient-bg {
+  background: linear-gradient(-45deg, #0A0A0F, #16161F, #1a0a2e, #0a1628);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111118; }
+::-webkit-scrollbar-thumb { background: #2D2D3F; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #7C3AED; }
+
+/* Button styles */
+.btn-primary {
+  @apply bg-brand text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 hover:bg-brand-dark hover:scale-105 active:scale-95;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+.btn-secondary {
+  @apply border border-dark-border text-gray-300 px-6 py-3 rounded-xl font-semibold transition-all duration-200 hover:border-brand hover:text-white;
+}
+.btn-ghost {
+  @apply text-gray-400 px-4 py-2 rounded-lg transition-all duration-200 hover:text-white hover:bg-dark-card;
+}
+
+/* Input */
+.input-dark {
+  @apply w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-white placeholder-gray-500 transition-all duration-200 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand;
+}
+
+/* Card */
+.card {
+  @apply bg-dark-card border border-dark-border rounded-2xl p-6 transition-all duration-200;
+}
+.card-hover {
+  @apply card hover:border-brand/30 hover:shadow-lg hover:shadow-brand/10 cursor-pointer;
+}
